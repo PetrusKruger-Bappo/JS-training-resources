@@ -4,7 +4,15 @@
 ## Purpose
 * Use a "Context Provider" to supply state and setState to any component in the tree.
 
-## Usage
+## Index
+  1. Create a context.
+  2. Create a provider that accepts some values and wraps some child components.
+  3. Pass those values into a child component with the useContext hook.
+
+
+
+` /* ******************************** Detail ******************************** */ `
+## Usage Breakdown
 ### Context Creation file
   1. import { createContext } from "react";
   2. export const MyContext = createContext(null);
@@ -13,7 +21,7 @@
   1. import React, { useState } from "react";
   2. import { MyContext } from "./Context";
   3. const [speaker, setSpeaker] = useState("speaker");
-  4.  <MyContext.Provider value={{ speaker, setSpeaker }}> ... </MyContext.Provider>
+  4.  <MyContext.Provider value={{ speaker, setSpeaker }}> {children} </MyContext.Provider>
 
 ### Context Consumer Files
   1. import { MyContext } from "./Context";
